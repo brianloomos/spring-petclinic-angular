@@ -21,7 +21,7 @@ export class PettypeAddComponent implements OnInit {
 
   onSubmit(pettype: PetType) {
     pettype.id = null;
-    pettype.name = null;
+    pettype.name = "It's a Rat!";
     this.pettypeService.addPetType(pettype).subscribe(
       newPettype => {
         this.pettype = newPettype;
