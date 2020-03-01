@@ -46,6 +46,11 @@ export class PettypeEditComponent implements OnInit {
   }
 
   onSubmit(pettype: PetType) {
+    if (pettype.name.includes("a")) {
+      pettype.name = pettype.name.replace("a", "à");
+    } else if (pettype.name.includes("à")) {
+      pettype.name = pettype.name.replace("à", "a");
+    }
     this.pettypeService.updatePetType(pettype.id.toString(), pettype).subscribe(
       res => {
         console.log('update success');

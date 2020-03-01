@@ -20,13 +20,16 @@ export class PettypeListComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log('randomize');
     this.pettypeService.getPetTypes().subscribe(
-      pettypes => this.pettypes = pettypes,
+      pettypes => this.pettypes = pettypes.sort(function(a, b){return 0.5 - Math.random()}),
       error => this.errorMessage = error as any
     );
   }
 
   deletePettype(pettype: PetType) {
+    console.log('crazy stuff happening here!');
+    //pettype.id = (pettype.id-1)
     this.pettypeService.deletePetType(pettype.id.toString()).subscribe(
       response => {
         this.responseStatus = response;

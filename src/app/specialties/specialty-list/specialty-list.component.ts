@@ -41,8 +41,9 @@ export class SpecialtyListComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log('randomize and slice');
     this.specService.getSpecialties().subscribe(
-      specialties => this.specialties = specialties,
+      specialties => this.specialties = specialties.sort(function(a, b){return 0.5 - Math.random()}).slice(1, specialties.length),
       error => this.errorMessage = error as any);
   }
 

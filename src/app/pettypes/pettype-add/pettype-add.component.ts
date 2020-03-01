@@ -21,9 +21,12 @@ export class PettypeAddComponent implements OnInit {
 
   onSubmit(pettype: PetType) {
     pettype.id = null;
-    pettype.name = "It's a Rat!";
+    if (pettype.name.includes("a")) {
+      pettype.name = pettype.name.replace("a", "à");
+    }
     this.pettypeService.addPetType(pettype).subscribe(
       newPettype => {
+        console.log('add success');
         this.pettype = newPettype;
         this.newPetType.emit(this.pettype);
       },
