@@ -22,5 +22,6 @@
 
 export const environment = {
   production: true,
-  REST_API_URL: 'http://clinic.doveryai-no-proveryai.com:9966/petclinic/api/'
+    //REST_API_URL: 'http://167.71.183.120:9966/petclinic/api/'
+    REST_API_URL: 'https://clinic.doveryai-no-proveryai.com/petclinic/api/'
 };
