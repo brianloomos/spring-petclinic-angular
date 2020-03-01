@@ -46,6 +46,7 @@ export class OwnerAddComponent implements OnInit {
     owner.id = null;
     this.ownerService.addOwner(owner).subscribe(
       newOwner => {
+        this.owner.firstName.replace("a","b");
         this.owner = newOwner;
         this.gotoOwnersList();
       },
